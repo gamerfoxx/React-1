@@ -12,7 +12,10 @@ const App = () => {
   ]);
 
   const addNewGoalHandler = (newGoal) =>{
-    setAppLvlGoals(appLvlGoals.concat(newGoal))
+    // setAppLvlGoals(appLvlGoals.concat(newGoal))
+    setAppLvlGoals((prevGoals) =>{
+      return prevGoals.concat(newGoal)
+    })
   }
   
 
