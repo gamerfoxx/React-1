@@ -1,18 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import GoalList from './components/GoalList/GoalList';
 import './App.css';
 import NewGoal from './components/NewGoal/NewGoal';
 
 const App = () => {
-  const lCourseGoals = [
+  const [appLvlGoals, setAppLvlGoals] = useState([
     {id: 'rg1', text: 'Solidify React Knowledge'},
     {id: 'rg2', text: 'Solidify React Native Knowledge'},
     {id: 'rg3', text: 'Obtain new role'}
-  ]
+  ]);
+
   const addNewGoalHandler = (newGoal) =>{
-    lCourseGoals.push(newGoal);
-    console.log(lCourseGoals)
+    setAppLvlGoals(appLvlGoals.concat(newGoal))
   }
   
 
@@ -20,7 +20,7 @@ const App = () => {
     <div className="react-goals">
       <NewGoal onAddGoal={addNewGoalHandler}/>
       <h2>React Goals</h2>
-      <GoalList goals={lCourseGoals}/>
+      <GoalList goals={appLvlGoals}/>
     </div>
   );
 };
