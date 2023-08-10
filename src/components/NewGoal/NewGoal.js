@@ -10,13 +10,15 @@ const NewGoal = (props) => {
       id: Math.random().toString(),
       text: 'new goal'
     }
+
+    props.onAddGoal(lNewGoal);
   }
 
   return (
-<form className='new-goal' onSubmit={addGoalHandler} >
-  <input type='text' />
-  <button type='submit'>Add Goal</button>
-</form>
+  <form className='new-goal' onSubmit={addGoalHandler} >
+    <input type='text' />
+    <button type='submit'>Add Goal</button>
+  </form>
 );
 };
 

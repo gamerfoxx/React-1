@@ -10,10 +10,15 @@ const App = () => {
     {id: 'rg2', text: 'Solidify React Native Knowledge'},
     {id: 'rg3', text: 'Obtain new role'}
   ]
+  const addNewGoalHandler = (newGoal) =>{
+    lCourseGoals.push(newGoal);
+    console.log(lCourseGoals)
+  }
+  
 
   return (
     <div className="react-goals">
-      <NewGoal/>
+      <NewGoal onAddGoal={addNewGoalHandler}/>
       <h2>React Goals</h2>
       <GoalList goals={lCourseGoals}/>
     </div>
