@@ -1,7 +1,8 @@
 import React from 'react';
 
-import GoalList from './components/GoalList';
+import GoalList from './components/GoalList/GoalList';
 import './App.css';
+import NewGoal from './components/NewGoal/NewGoal';
 
 const App = () => {
   const lCourseGoals = [
@@ -12,6 +13,7 @@ const App = () => {
 
   return (
     <div className="react-goals">
+      <NewGoal/>
       <h2>React Goals</h2>
       <GoalList goals={lCourseGoals}/>
     </div>
